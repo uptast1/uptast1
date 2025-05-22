@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Up Tast1</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1610901295250-6dc30a2a094f?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 100px 20px;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+    .btn {
+      font-size: 20px;
+      padding: 15px 30px;
+      background-color: #e63946;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #d62828;
+    }
+    .contact {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #ccc;
+    }
+    .form-popup {
+      display: none;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #222;
+      padding: 20px;
+      border: 2px solid #e63946;
+      border-radius: 10px;
+      z-index: 9999;
+    }
+    .form-popup input {
+      margin: 10px 0;
+      padding: 10px;
+      width: 90%;
+      font-size: 16px;
+    }
+    .form-popup button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #e63946;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .form-popup button:hover {
+      background-color: #d62828;
+    }
+    .footer-label {
+      margin-top: 80px;
+      font-size: 36px;
+      font-weight: bold;
+      color: #ffffffcc;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Up Tast1</h1>
+    <p>최고의 참가자들을 위한 무대에 도전하세요.</p>
+    <button class="btn" onclick="openForm()">대회 참가</button>
+    <div class="contact">문의: 010-4909-3572</div>
+    <div class="footer-label">박의인의 테스트 사이트</div>
+  </div>
+
+  <div class="form-popup" id="formPopup">
+    <h2>참가 신청</h2>
+    <input type="text" id="name" placeholder="참가자 이름">
+    <input type="text" id="phone" placeholder="전화번호">
+    <button onclick="submitForm()">신청하기</button>
+  </div>
+
+  <script>
+    function openForm() {
+      document.getElementById("formPopup").style.display = "block";
+    }
+    function submitForm() {
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      if (name && phone) {
+        alert("참가 신청이 접수되었습니다!");
+        document.getElementById("formPopup").style.display = "none";
+      } else {
+        alert("이름과 전화번호를 모두 입력해주세요.");
+      }
+    }
+  </script>
+</body>
+</html>
